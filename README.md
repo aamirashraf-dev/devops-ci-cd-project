@@ -49,3 +49,4 @@ Pipeline steps:
 - Build Docker image
 
 ```
+Production-style GitHub workflow enabled.
