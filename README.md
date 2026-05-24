@@ -38,3 +38,14 @@ python -m pytest
 ```bash
 python -m flake8 app/
 ```
+## CI/CD Pipeline
+
+This project uses GitHub Actions for Continuous Integration.
+
+Pipeline steps:
+- Install dependencies
+- Run linting with Flake8
+- Run automated tests with Pytest
+- Build Docker image
+
+```
