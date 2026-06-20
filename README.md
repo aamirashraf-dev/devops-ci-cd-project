@@ -1,33 +1,38 @@
 # DevOps CI/CD Pipeline Project
 
-A DevOps project demonstrating CI/CD automation using GitHub Actions, Docker, Python Flask, and automated testing.
+A DevOps project demonstrating CI/CD automation using GitHub Actions, Docker, Docker Compose, Kubernetes, Python Flask, Redis, and automated testing.
 
 ---
 
 ## Tech Stack
 
-- Python
-- Flask
-- Docker
-- GitHub Actions
-- Pytest
-- Flake8
-- Git
-- GitHub
+* Python
+* Flask
+* Docker
+* Docker Compose
+* Kubernetes
+* Redis
+* GitHub Actions
+* Pytest
+* Flake8
+* Git
+* GitHub
 
 ---
 
 ## Features
 
-- Automated CI/CD pipeline
-- Dockerized Flask application
-- Automated testing with Pytest
-- Linting with Flake8
-- GitHub Actions workflow
-- Containerized deployment
-- Feature branch workflow
-- Pull request validation
-- Protected main branch
+* Automated CI/CD pipeline
+* Dockerized Flask application
+* Multi-container setup with Docker Compose
+* Redis integration
+* Automated testing with Pytest
+* Linting with Flake8
+* GitHub Actions workflow
+* Kubernetes deployment
+* Feature branch workflow
+* Pull request validation
+* Protected main branch
 
 ---
 
@@ -42,6 +47,10 @@ devops-ci-cd-project/
 │
 ├── tests/
 │   └── test_app.py
+│
+├── k8s/
+│   ├── deployment.yaml
+│   └── service.yaml
 │
 ├── .github/
 │   └── workflows/
@@ -70,6 +79,19 @@ http://localhost:5000
 
 ---
 
+## Run with Docker Compose
+
+```bash
+docker compose up --build
+```
+
+This starts:
+
+* Flask application
+* Redis container
+
+---
+
 ## Run Tests
 
 ```bash
@@ -91,10 +113,32 @@ python -m flake8 app/
 This project uses GitHub Actions for Continuous Integration.
 
 Pipeline steps:
-- Install dependencies
-- Run linting with Flake8
-- Run automated tests with Pytest
-- Build Docker image
+
+* Install dependencies
+* Run linting with Flake8
+* Run automated tests with Pytest
+* Build Docker image
+
+---
+
+## Kubernetes
+
+This project includes Kubernetes manifests for container orchestration.
+
+Components:
+
+* Deployment
+* Service
+* Replica management
+* Multi-pod architecture
+
+Commands:
+
+```bash
+kubectl apply -f k8s/
+kubectl get pods
+kubectl get services
+```
 
 ---
 
@@ -102,17 +146,19 @@ Pipeline steps:
 
 This project follows a professional Git workflow:
 
-- Feature branches
-- Pull requests
-- Branch protection rules
-- Automated CI validation before merge
+* Feature branches
+* Pull requests
+* Branch protection rules
+* Automated CI validation before merge
 
 ---
 
 ## Future Improvements
 
-- Kubernetes deployment
-- Terraform infrastructure
-- AWS deployment
-- Docker Compose multi-container setup
-- Monitoring and logging
+* Terraform infrastructure
+* AWS deployment
+* Monitoring and logging
+* Helm charts
+
+```
+```
